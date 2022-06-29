@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/cart_item_marginTop"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/cart_item_paddingStartEnd"
+    android:paddingTop="@dimen/cart_item_paddingTopBottom"
+    android:paddingEnd="@dimen/cart_item_paddingStartEnd"
+    android:paddingBottom="@dimen/cart_item_paddingTopBottom">
+
+    <LinearLayout
+        android:id="@+id/ll_cart_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_grey_border_background"
+        android:padding="@dimen/cart_item_image_padding">
+
+        <ImageView
+            android:id="@+id/iv_cart_item_image"
+            android:layout_width="@dimen/cart_item_image_width"
+            android:layout_height="@dimen/cart_item_image_height"
+            android:background="@color/colorBackgroundGrey"
+            android:contentDescription="@string/content_description"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_cart_item_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/cart_item_details_marginStart"
+        android:layout_marginEnd="@dimen/cart_item_details_marginEnd"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.example.rumiappadmin.utils.MSPTextView
+            android:id="@+id/tv_cart_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/item_value_text_color"
+            android:textSize="@dimen/cart_item_title_textSize"
+            tools:text="Cart Item Title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.example.rumiappadmin.utils.MSPTextViewBold
+                android:id="@+id/tv_cart_item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/item_value_text_color"
+                android:textSize="@dimen/cart_item_price_textSize"
+                android:textStyle="bold"
+                tools:text="$100" />
+
+            <LinearLayout
+                android:id="@+id/ll_update_cart_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/update_cart_quantity_marginStart"
+                android:layout_marginEnd="@dimen/update_cart_quantity_marginEnd"
+                android:layout_toEndOf="@id/tv_cart_item_price"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.example.rumiappadmin.utils.MSPTextView
+                    android:id="@+id/tv_cart_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/item_grey_border_background"
+                    android:paddingStart="@dimen/cart_quantity_paddingStartEnd"
+                    android:paddingTop="@dimen/cart_quantity_paddingTopBottom"
+                    android:paddingEnd="@dimen/cart_quantity_paddingStartEnd"
+                    android:paddingBottom="@dimen/cart_quantity_paddingTopBottom"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="@dimen/cart_quantity_textSize"
+                    android:textStyle="bold"
+                    tools:text="1" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
